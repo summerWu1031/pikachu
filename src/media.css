@@ -1,19 +1,24 @@
-const string = `
-  /*
-  *首先我们需要皮卡丘的皮
-  */
+* {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
-  .skin {
-    position: relative;
-    background-color: #ffe600;
-    min-height: 50vh;
-  }
+body {
+  background-color: #ffe600;
+  min-height: 100vh;
+}
+.skin {
+  position: relative;
+}
 
-  /*
-  *然后需要一个小巧的鼻子
-  */
-
- .nose {
+.nose {
   position: relative;
   left: 50%;
   top: 40px;
@@ -25,6 +30,24 @@ const string = `
   z-index: 1;
 }
 
+.nose:hover {
+  animation: wave 300ms infinite linear;
+  transform-origin: 50% 100%;
+}
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-5deg);
+  }
+  66% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .yuan {
   height: 4px;
   width: 10px;
@@ -34,10 +57,6 @@ const string = `
   border-radius: 50% 50% 0 0;
   background-color: #000;
 }
-
-/*
-*然后画皮卡丘的眼睛
-*/
 .eyes {
   width: 32px;
   height: 32px;
@@ -49,10 +68,6 @@ const string = `
   border-radius: 50%;
   background-color: #2e2e2e;
 }
-
-/*
-*画眼睛里面白色的部分
-*/
 .eyes::before {
   content: "";
   display: block;
@@ -65,19 +80,12 @@ const string = `
   left: 4px;
 }
 
-/*
-*把眼睛放到合适的位置
-*/
 .eyes.left {
   transform: translateX(-75px);
 }
 .eyes.right {
   transform: translateX(75px);
 }
-
-/*
-*开始画皮卡丘的嘴巴
-*/
 .mouth {
   width: 100px;
   height: 100px;
@@ -86,10 +94,6 @@ const string = `
   left: 50%;
   margin-left: -50px;
 }
-
-/*
-*首先画它的上嘴唇
-*/
 .mouth .up {
   position: relative;
   top: -25px;
@@ -105,11 +109,6 @@ const string = `
   background-color: #ffe600;
   z-index: 1;
 }
-
-/*
-*上嘴唇是像胡子形状的
-*画好后把它放在对应位置
-*/
 .mouth .up .lip.left {
   border-radius: 0 0 0 50px;
   transform: rotate(-15deg) translateX(-31px);
@@ -136,10 +135,6 @@ const string = `
   left: -3px;
 }
 
-
-/*
-*然后我们来画下嘴唇
-*/
 .mouth .down {
   width: 100px;
   height: 100px;
@@ -159,10 +154,6 @@ const string = `
   background-color: #9b000a;
   overflow: hidden;
 }
-
-/*
-*然后是小舌头
-*/
 .mouth .down .yuan2 {
   width: 100px;
   height: 100px;
@@ -173,10 +164,6 @@ const string = `
   margin-left: -50px;
   border-radius: 50% 50% 0 0;
 }
-
-/*
-*接着我们来画皮卡丘的脸
-*/
 .face {
   width: 44px;
   height: 44px;
@@ -189,40 +176,22 @@ const string = `
   background-color: #ff0000;
   z-index: 3;
 }
-
-/*
-*把脸颊放到合适的位置
-*/
-.face.left {
-  transform: translateX(-100px);
-}
-.face.right {
-  transform: translateX(100px);
-}
-
-/*
-*然后把皮卡丘的放电技能放到合适的地方
-*/
 .face > img {
   position: absolute;
   top: 50%;
   left: 50%;
-  display:block;
 }
 
 .face.left > img {
   transform: rotateY(180deg);
   transform-origin: 0 0;
 }
-
-/*
-*画好了，把皮卡丘送你
-*/
-
-/*
-*让我们来画一个精灵球吧
-*首先需要画一个圆
-*/
+.face.left {
+  transform: translateX(-100px);
+}
+.face.right {
+  transform: translateX(100px);
+}
 .ball {
   width: 100px;
   height: 100px;
@@ -231,12 +200,47 @@ const string = `
   top: 200px;
   left: 50%;
   margin-left: -50px;
+  animation: roll 3s linear alternate infinite;
   border-radius: 50%;
+  background: rgb(255, 27, 27);
+  background: rgb(255, 27, 27);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 27, 27, 1) 48%,
+    rgba(0, 0, 0, 1) 48%,
+    rgba(0, 0, 0, 1) 52%,
+    rgba(255, 255, 255, 1) 52%
+  );
+}
+.ball::before {
+  content: "";
+  display: block;
+  width: 95px;
+  height: 95px;
+  /* border: solid 1px red; */
+  border-radius: 50%;
+  border-right: 20px solid rgba(0, 0, 0, 0.2);
 }
 
-/*
-*然后画一个里面的小球球
-*/
+@keyframes roll {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-100px) rotate(360deg);
+  }
+  40% {
+    transform: translateX(-100px) rotate(360deg);
+  }
+  80% {
+    transform: translateX(100px) rotate(-360deg);
+  }
+
+  100% {
+    transform: translateX(100px) rotate(-360deg);
+  }
+}
+
 .innerBall {
   width: 50px;
   height: 50px;
@@ -250,9 +254,6 @@ const string = `
   z-index: 1;
 }
 
-/*
-*接着把开关红色的部分图上
-*/
 .innerBall::after {
   content: "";
   display: block;
@@ -269,22 +270,3 @@ const string = `
   transform-origin: bottom center;
   animation: blink 1s infinite;
 }
-
-/*
-*最后加点阴影让他看起来更立体
-*/
-.ball::before {
-  content: "";
-  display: block;
-  width: 95px;
-  height: 95px;
-  border-radius: 50%;
-  border-right: 20px solid rgba(0, 0, 0, 0.2);
-}
-
-/*
-*精灵球画好啦，希望你可以收服皮卡丘哦
-*/
-  `
-
-  export default string

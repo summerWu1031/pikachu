@@ -30,6 +30,7 @@ body {
   /* border-radius: 50%; */
   z-index: 1;
 }
+
 .nose:hover {
   animation: wave 300ms infinite linear;
   transform-origin: 50% 100%;
@@ -58,6 +59,7 @@ body {
   border-radius: 50% 50% 0 0;
   background-color: #000;
 }
+
 .eyes {
   width: 64px;
   height: 64px;
@@ -69,6 +71,7 @@ body {
   border-radius: 50%;
   background-color: #2e2e2e;
 }
+
 .eyes::before {
   content: "";
   display: block;
@@ -87,6 +90,7 @@ body {
 .eyes.right {
   transform: translateX(130px);
 }
+
 .mouth {
   width: 200px;
   height: 200px;
@@ -96,6 +100,7 @@ body {
   left: 50%;
   margin-left: -100px;
 }
+
 .mouth .up {
   position: relative;
   top: -20px;
@@ -112,10 +117,16 @@ body {
   background-color: #ffe600;
   z-index: 1;
 }
+
 .mouth .up .lip.left {
   border-radius: 0 0 0 50px;
   transform: rotate(-15deg) translateX(-54px);
 }
+.mouth .up .lip.right {
+  border-radius: 0 0 50px 0;
+  transform: rotate(15deg) translateX(54px);
+}
+
 .mouth .up .lip::before {
   content: "";
   display: block;
@@ -126,13 +137,9 @@ body {
   bottom: -1px;
   background-color: #ffe600;
 }
+
 .mouth .up .lip.left::before {
   right: -6px;
-}
-
-.mouth .up .lip.right {
-  border-radius: 0 0 50px 0;
-  transform: rotate(15deg) translateX(54px);
 }
 
 .mouth .up .lip.right::before {
@@ -147,6 +154,7 @@ body {
   top: 0;
   overflow: hidden;
 }
+
 .mouth .down .yuan1 {
   width: 150px;
   height: 1000px;
@@ -159,6 +167,7 @@ body {
   background-color: #9b000a;
   overflow: hidden;
 }
+
 .mouth .down .yuan2 {
   width: 150px;
   height: 160px;
@@ -170,6 +179,7 @@ body {
   margin-left: -75px;
   border-radius: 50% 50% 0 0;
 }
+
 .face {
   width: 88px;
   height: 88px;
@@ -182,15 +192,12 @@ body {
   background-color: #ff0000;
   z-index: 3;
 }
+
 .face > img {
   position: absolute;
   /* border: 1px solid red; */
   top: 50%;
   left: 50%;
-  display: none;
-}
-.face > img:hover {
-  display: block;
 }
 
 .face.left > img {
