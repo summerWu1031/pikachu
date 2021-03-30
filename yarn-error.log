@@ -1,0 +1,40 @@
+Arguments: 
+  D:\Software\node.js\node.exe D:\Software\yarrn\bin\yarn.js init
+
+PATH: 
+  D:\Software\cmder\vendor\git-for-windows\mingw64\bin;D:\Software\cmder\vendor\git-for-windows\usr\bin;C:\Users\summer_Wu\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;D:\Software\yarrn\bin;C:\Users\summer_Wu\Desktop;D:\Software\hugo\hugo_0.78.2_Windows-64bit;D:\Software\node.js;C:\Users\summer_Wu\AppData\Local\Microsoft\WindowsApps;D:\vscode\Microsoft VS Code\bin;C:\Users\summer_Wu\AppData\Local\Yarn\bin;C:\Users\summer_Wu\Desktop;C:\Users\summer_Wu\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  10.23.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (D:\Software\yarrn\lib\cli.js:137009:13)
+      at Interface.emit (events.js:198:13)
+      at Interface._ttyWrite (readline.js:801:16)
+      at ReadStream.onkeypress (readline.js:184:10)
+      at ReadStream.emit (events.js:198:13)
+      at emitKeys (internal/readline.js:424:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1073:36)
+      at ReadStream.emit (events.js:198:13)
+      at addChunk (_stream_readable.js:288:12)
+
+npm manifest: 
+  {
+    "devDependencies": {
+      "cssnano": "^4.1.10"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
